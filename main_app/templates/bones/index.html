@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Bone List</h1>
+
+{% if not bones %}
+  <p>There are no bones yet, get collecting!</p>
+{% else %}
+  {% for bone in bones %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ bone.name }}</span>
+        <p>Type: {{ bone.breed }}</p>
+        <p>Description: {{ bone.description }}</p>
+        <p>Status: {{ bone.status }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% endif%}
+{% endblock %}
